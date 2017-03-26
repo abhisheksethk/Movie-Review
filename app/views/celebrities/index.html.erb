@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Celebrities</h1>
+
+<div class="row">
+  <% @celebrities.each do |celebrity| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag celebrity.image.url(:medium), class: 'image'), celebrity %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<div class="btn btn-primary"><%= link_to 'New Celebrity', new_celebrity_path %> </div>

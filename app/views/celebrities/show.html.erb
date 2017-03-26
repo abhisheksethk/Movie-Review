@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "col-xm-6">
+<%= image_tag @celebrity.image.url(:medium) %>
+</div>
+<div class="col-xm-6">
+<p>
+  <strong>Name:</strong>
+  <%= @celebrity.name %>
+</p>
+
+<p>
+  <strong>Twiiter link:</strong>
+  <%= @celebrity.twiiter_link %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @celebrity.age %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_celebrity_path(@celebrity) %> |
+<%= link_to 'Back', celebrities_path %>

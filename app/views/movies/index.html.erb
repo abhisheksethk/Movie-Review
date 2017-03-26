@@ -1,0 +1,21 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1>Your Favorite Movies Reviewed</h1>
+    <p>This is made by IIIT Research and Development Wing (#Original)</p>
+    <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
+ <h1 class="current-category btn btn-primary"><%= params[:category] %></h1>
+ <% if@movies.count == 0 %>
+ <h1>There are no movies currently in this category</h1>
+ <% else %>
+<div class="row">
+  <% @movies.each do |movie| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag movie.image.url(:medium), class: 'image'), movie %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% end %>

@@ -1,0 +1,33 @@
+<%= form_for @celebrity, html: { multipart: true } do |f| %>
+  <% if @celebrity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@celebrity.errors.count, "error") %> prohibited this celebrity from being saved:</h2>
+
+      <ul>
+      <% @celebrity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :twiiter_link %><br>
+    <%= f.text_field :twiiter_link %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
